@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DoctoGoogle — Projet Cloud Google Workspace | Florian MAGLOIRE</title>
+  <meta name="description" content="Projet cloud Google Workspace & Apps Script : automatisation de processus, orchestration de modules, agenda, formulaires, mails et base de données serverless." />
+
+  <link rel="stylesheet" href="../assets/css/design-tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/project.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <a href="../index.html">Florian MAGLOIRE</a>
+    </div>
+    <nav>
+      <a class="btn btn-ghost btn-sm" href="../index.html#projects">← Retour aux projets</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container project">
+  <div class="project-layout">
+
+    <article class="project-content">
+
+      <h1>DoctoGoogle — Plateforme Cloud de gestion automatisée (Google Workspace)</h1>
+
+      <p class="intro">
+        <strong>DoctoGoogle</strong> est un projet <strong>cloud-native</strong> développé autour de
+        <strong>Google Workspace</strong> et <strong>Google Apps Script</strong>.
+        L’objectif est de créer une plateforme automatisée de gestion de cours et de formations,
+        sans infrastructure serveur dédiée, entièrement basée sur des services SaaS.
+      </p>
+
+      <section>
+        <h2>Contexte du projet</h2>
+        <p>
+          Le projet a été réalisé dans un cadre académique et professionnel pour une structure
+          utilisant déjà <strong>Google Workspace</strong> comme système d’information.
+        </p>
+        <p>
+          La contrainte principale était de concevoir une solution
+          <strong>100 % cloud, intégrée, sécurisée et maintenable</strong>,
+          sans recours à un backend traditionnel (pas de serveur, pas de base SQL dédiée).
+        </p>
+      </section>
+
+      <section>
+        <h2>Comparaison et positionnement technique</h2>
+        <p>
+          DoctoGoogle peut être comparé à :
+        </p>
+        <ul>
+          <li><strong>Zapier / Make</strong> — pour l’orchestration de services</li>
+          <li><strong>Microsoft Power Automate</strong> — pour l’automatisation métier</li>
+          <li><strong>Mini‑ERP SaaS</strong> — agenda, base de données, workflow, notifications</li>
+        </ul>
+        <p>
+          La différence majeure est que l’ensemble est développé sur mesure via
+          <strong>Apps Script (JavaScript serverless)</strong>, directement dans l’écosystème Google.
+        </p>
+      </section>
+
+      <div class="card">
+        <h3>Architecture Cloud & modules</h3>
+        <ul class="clean">
+          <li><strong>Google Forms</strong> — interface utilisateur (inscriptions)</li>
+          <li><strong>Google Sheets</strong> — base de données centrale (conteneur Apps Script)</li>
+          <li><strong>Google Calendar</strong> — planification et synchronisation des événements</li>
+          <li><strong>Gmail</strong> — notifications automatiques</li>
+          <li><strong>Apps Script</strong> — moteur logique & orchestration</li>
+        </ul>
+      </div>
+
+      <section>
+        <h2>Mes missions principales</h2>
+
+        <h3>Responsabilité technique & coordination</h3>
+        <p>
+          J’occupais un rôle central dans le projet, avec une responsabilité
+          de <strong>pilotage technique</strong> et de <strong>coordination entre modules</strong>.
+        </p>
+
+        <ul>
+          <li>Définition de l’architecture globale</li>
+          <li>Découpage fonctionnel en modules Apps Script</li>
+          <li>Centralisation du code dans un conteneur unique (Sheets)</li>
+          <li>Synchronisation inter‑services Google</li>
+        </ul>
+
+        <h3>Développement — Module Agenda</h3>
+        <ul>
+          <li>Création automatique d’événements Google Calendar depuis la base de données</li>
+          <li>Synchronisation bidirectionnelle Agenda ↔ Sheets</li>
+          <li>Gestion des formats de dates / horaires</li>
+          <li>Ajout de métadonnées (enseignant, matière, email)</li>
+        </ul>
+
+        <h3>Orchestration inter‑modules</h3>
+        <p>
+          Le cœur du projet repose sur la <strong>coordination entre modules indépendants</strong> :
+        </p>
+        <ul>
+          <li>Formulaire → Base de données</li>
+          <li>Base de données → Agenda</li>
+          <li>Agenda → Mise à jour dynamique du formulaire</li>
+          <li>Inscription → Envoi automatique d’e‑mail</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aspects développement</h2>
+        <ul>
+          <li><strong>JavaScript serverless</strong> (Apps Script)</li>
+          <li>Déclencheurs événementiels (onOpen, time‑based, actions utilisateur)</li>
+          <li>Manipulation d’API Google (Calendar, Gmail, Forms, Sheets)</li>
+          <li>Gestion des données structurées sans base SQL</li>
+          <li>Automatisation complète de workflows métier</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Travail en équipe (anonymisé)</h2>
+        <p>
+          Le projet a été réalisé en équipe, avec une répartition modulaire :
+        </p>
+        <ul>
+          <li><strong>Développeur A</strong> — gestion dynamique des formulaires</li>
+          <li><strong>Développeur B</strong> — automatisation des notifications e‑mail</li>
+          <li><strong>Moi</strong> — architecture, agenda, intégration et coordination</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Résultats & apprentissages</h2>
+        <ul>
+          <li>Conception d’une architecture cloud sans serveur</li>
+          <li>Approche modulaire et découplée</li>
+          <li>Gestion des dépendances inter‑services</li>
+          <li>Vision produit et workflow métier</li>
+          <li>Expérience concrète en automatisation SaaS</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Limites & perspectives</h2>
+        <p>
+          Les limites sont principalement liées aux quotas Apps Script et aux
+          contraintes de l’écosystème Google.
+        </p>
+        <ul>
+          <li>Ajout d’une interface front dédiée</li>
+          <li>Gestion avancée des droits utilisateurs</li>
+          <li>Journalisation / audit des actions</li>
+          <li>Scalabilité via comptes Workspace étendus</li>
+        </ul>
+        <p class="muted">
+        </p>
+      </section>
+
+    </article>
+
+    <aside class="project-aside">
+      <nav id="toc" class="toc" aria-label="Sommaire">
+        <button class="toc-toggle" aria-expanded="false" aria-controls="toc-content">
+          Sommaire <span class="toc-icon">▾</span>
+        </button>
+        <div id="toc-content" class="toc-content"></div>
+      </nav>
+    </aside>
+
+  </div>
+
+  <script src="../assets/js/toc.js"></script>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Florian MAGLOIRE • Portfolio Cloud & Cybersécurité</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

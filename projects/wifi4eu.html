@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet – WIFI4EU | Florian MAGLOIRE</title>
+  <meta name="description" content="Projet WIFI4EU : installation et sécurisation d’infrastructures Wi-Fi publiques." />
+
+ <!-- CSS global (important : on est dans /projects donc ../) -->
+<link rel="stylesheet" href="../assets/css/design-tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/project.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <a href="../index.html" aria-label="Retour à l'accueil">Florian MAGLOIRE</a>
+    </div>
+    <nav>
+      <a class="btn btn-ghost btn-sm" href="../index.html#projects">← Retour aux projets</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container project">
+  <div class="project-layout">
+
+    <article class="project-content">
+      <h1>WIFI4EU — Wi‑Fi public & authentification WPA2‑Entreprise</h1>
+      <p class="intro">
+        Déploiement d’un réseau Wi‑Fi public dans le cadre du programme européen WIFI4EU,
+        incluant installation des bornes, gestion centralisée et intégration d’une authentification WPA2‑Entreprise
+        via FreeRADIUS.
+      </p>
+
+      <section>
+        <h2>Contexte</h2>
+        <p>
+          WIFI4EU est une initiative européenne visant à fournir un accès Wi‑Fi gratuit et conforme dans des lieux publics.
+          Projet réalisé en stage chez IPEOS pour la commune de Gourbeyre, avec contraintes de validation (débit,
+          affichage visuel WIFI4EU, absence d’exploitation commerciale des données, etc.).
+        </p>
+      </section>
+
+      <section>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Déployer une couverture Wi‑Fi sur plusieurs lieux publics</li>
+          <li>Assurer conformité (RGPD/CNIL) et exigences WIFI4EU</li>
+          <li>Gérer centralement les AP (supervision, mises à jour)</li>
+          <li>Renforcer l’authentification (WPA2‑Entreprise / 802.1X)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Approche technique</h2>
+        <p>
+          Choix d’une gestion centralisée via UniFi Controller, déployé avec Docker.
+          Déploiement de bornes (dont modèle UAP‑AC‑M‑PRO retenu), adoption au contrôleur,
+          et mise en place d’une authentification RADIUS.
+        </p>
+      </section>
+
+      <div class="card">
+        <h3>Technologies utilisées</h3>
+        <ul class="clean">
+          <li><strong>UniFi</strong> : contrôleur central + gestion AP</li>
+          <li><strong>Docker</strong> : déploiement du contrôleur</li>
+          <li><strong>FreeRADIUS</strong> : AAA / 802.1X</li>
+          <li><strong>WPA2‑Entreprise</strong> : identifiants individuels</li>
+          <li><strong>SSH</strong> : adoption AP / opérations</li>
+        </ul>
+      </div>
+
+      <section>
+        <h2>Mise en œuvre</h2>
+        <p>
+          Déploiement UniFi Controller via docker-compose, adoption des bornes (forçage via SSH si nécessaire),
+          configuration du Wi‑Fi et intégration RADIUS : clients.conf / users côté FreeRADIUS,
+          tests via radtest, puis validation de connexion sur terminaux.
+        </p>
+      </section>
+
+      <div class="card">
+        <h3>Résultats</h3>
+        <ul class="clean">
+          <li>Réseau Wi‑Fi public opérationnel</li>
+          <li>Authentification WPA2‑Entreprise fonctionnelle (RADIUS)</li>
+          <li>Supervision via UniFi (clients, débit, topologie)</li>
+          <li>Expérience terrain (autorisations, contraintes météo, adoption AP)</li>
+        </ul>
+        <p class="muted" style="margin:0;"><span class="signature">Signed: Sylvz</span></p>
+      </div>
+
+      <section>
+        <h2>Limites</h2>
+        <p>
+          Contraintes terrain (climat, autorisations) + complexité initiale FreeRADIUS (versions docker-compose non maintenues).
+          Les choix finaux privilégient la stabilité et la maintenabilité.
+        </p>
+      </section>
+
+      <section>
+        <h2>Perspectives</h2>
+        <ul>
+          <li>Supervision plus avancée & alerting</li>
+          <li>Durcissement des accès & procédures d’exploitation</li>
+          <li>Optimisation couverture radio et capacité</li>
+        </ul>
+      </section>
+    </article>
+
+    <aside class="project-aside">
+      <nav id="toc" class="toc" aria-label="Sommaire">
+        <button class="toc-toggle" aria-expanded="false" aria-controls="toc-content">
+          Sommaire <span class="toc-icon">▾</span>
+        </button>
+        <div id="toc-content" class="toc-content"></div>
+      </nav>
+    </aside>
+
+  </div>
+  <script src="../assets/js/toc.js"></script>
+</main>
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Florian MAGLOIRE • Portfolio Cybersécurité</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+ <script src="../assets/js/toc.js"></script>
+
+</body>
+</html>

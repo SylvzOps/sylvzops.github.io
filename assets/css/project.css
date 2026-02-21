@@ -1,0 +1,206 @@
+/* =========================================================
+   PROJECT PAGES — VERSION FINALE
+   ========================================================= */
+
+.project {
+  max-width: 950px;
+}
+
+/* =========================================================
+   HEADER PROJET
+   ========================================================= */
+
+.project-header {
+  margin-bottom: 2.5rem;
+}
+
+.project h1 {
+  font-size: 2.4rem;
+  background: linear-gradient(
+    90deg,
+    var(--neon-blue),
+    var(--neon-green)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.project .intro {
+  max-width: 70ch;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.project-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+}
+
+.badge.green {
+  color: var(--neon-green);
+  border-color: rgba(34,197,94,.35);
+}
+
+.badge.blue {
+  color: var(--neon-blue);
+  border-color: rgba(56,189,248,.35);
+}
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+.project-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 22px;
+  align-items: start;
+}
+
+/* =========================================================
+   CONTENU PROJET
+   ========================================================= */
+
+.project-content {
+  line-height: 1.75;
+}
+
+.project-content p {
+  margin: 0 0 1rem;
+}
+
+.project-content section {
+  margin-bottom: 2.2rem;
+}
+
+.project h2 {
+  margin: 2.6rem 0 .8rem;
+  font-size: 1.35rem;
+  scroll-margin-top: 96px;
+}
+
+.project h3 {
+  margin: 0 0 .6rem;
+  font-size: 1.05rem;
+  scroll-margin-top: 96px;
+}
+
+.project ul {
+  margin-left: 1.2rem;
+}
+
+/* =========================================================
+   TOC
+   ========================================================= */
+
+.toc {
+  position: sticky;
+  top: 92px;
+  border: 1px solid var(--border);
+  background: var(--panel-soft);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+/* Bouton mobile */
+.toc-toggle {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: var(--text);
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toc-icon {
+  transition: transform .2s ease;
+}
+
+.toc-content {
+  margin-top: 10px;
+}
+
+.toc-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-content li {
+  margin: 6px 0;
+}
+
+.toc-content a {
+  display: block;
+  font-size: 13px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: var(--muted);
+  border: 1px solid transparent;
+}
+
+.toc-content a:hover {
+  color: var(--neon-blue);
+  border-color: var(--border);
+  background: rgba(255,255,255,.04);
+}
+
+.toc-content a[data-level="3"] {
+  padding-left: 18px;
+  font-size: 12.5px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (min-width: 901px) {
+  .toc-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toc {
+    position: static;
+  }
+
+  .toc-content {
+    display: none;
+  }
+
+  .toc.open .toc-content {
+    display: block;
+  }
+
+  .toc.open .toc-icon {
+    transform: rotate(180deg);
+  }
+}

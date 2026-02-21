@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet – SOC Managé Hybride | Florian MAGLOIRE</title>
+  <meta name="description" content="Projet SOC managé hybride : architecture, détection, collecte de logs, sécurisation des flux, travail de groupe et contribution." />
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../assets/css/design-tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/project.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <a href="../index.html">Florian MAGLOIRE</a>
+    </div>
+    <nav>
+      <a href="../index.html#projects">← Retour aux projets</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container project">
+  <div class="project-layout">
+
+    <article class="project-content">
+
+      <h1>SOC Managé Hybride — Architecture open source</h1>
+
+      <p class="intro">
+        Conception et mise en œuvre d’un SOC managé hybride basé sur des solutions open source.
+        Le projet couvre la collecte d’événements, la détection réseau et hôte, la gestion
+        d’incidents, l’orchestration de la réponse et la sécurisation des flux,
+        dans un contexte proche d’un SOC externalisé avec contraintes d’exploitation et de gouvernance.
+      </p>
+
+      <section>
+        <h2>Contexte</h2>
+        <p>
+          Ce projet a été réalisé dans le cadre du Mastère Cybersécurité, en groupe.
+          L’objectif était de concevoir une architecture SOC réaliste pour une organisation
+          souhaitant externaliser une partie de la supervision tout en conservant la maîtrise
+          de son système d’information.
+        </p>
+        <p>
+          Le SOC est pensé comme une brique transverse, exposée de manière contrôlée,
+          avec une séparation claire entre l’environnement SOC et les environnements clients.
+        </p>
+      </section>
+
+      <section>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Centraliser les événements de sécurité (systèmes et réseau)</li>
+          <li>Détecter des comportements suspects et attaques connues</li>
+          <li>Gérer les incidents de bout en bout</li>
+          <li>Sécuriser l’accès au SOC (analystes, outils)</li>
+          <li>Poser des bases exploitables en conditions réelles</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Approche technique</h2>
+        <p>
+          L’architecture est découpée en briques fonctionnelles distinctes :
+          collecte et détection, corrélation et analyse, gestion des incidents,
+          réponse et orchestration, et sécurisation des flux.
+        </p>
+        <p>
+          Les flux entre les composants sont volontairement limités,
+          chiffrés et contrôlés, afin de réduire la surface d’attaque
+          et respecter une logique de défense en profondeur.
+        </p>
+      </section>
+
+      <div class="card">
+        <h3>Technologies utilisées</h3>
+        <ul class="clean">
+          <li><strong>Wazuh</strong> — SIEM / EDR (agents, corrélation)</li>
+          <li><strong>Suricata</strong> — IDS réseau</li>
+          <li><strong>TheHive</strong> — gestion des incidents</li>
+          <li><strong>Cortex</strong> — SOAR / automatisation</li>
+          <li><strong>MISP</strong> — Threat Intelligence</li>
+          <li><strong>WireGuard</strong> — VPN sécurisé</li>
+          <li><strong>Traefik</strong> — reverse proxy</li>
+          <li><strong>Keycloak</strong> — IAM / SSO</li>
+        </ul>
+      </div>
+
+      <section>
+        <h2>Travail de groupe</h2>
+        <p>
+          Le projet a été mené avec une organisation en backlog : répartition par briques techniques
+          et tâches transverses partagées (intégration inter-outils, sécurisation globale, tests).
+          Cette organisation a permis d’avancer en parallèle sur plusieurs composants tout en
+          validant régulièrement la chaîne complète (détection → collecte → incident).
+        </p>
+
+        <h3>Répartition des responsabilités</h3>
+        <ul>
+          <li><strong>Florian MAGLOIRE</strong> : VPN (WireGuard), IDS (Suricata), reverse proxy (Traefik)</li>
+          <li><strong>Collaborateur (anonymisé)</strong> : Wazuh (logs & alertes), MISP (Threat Intelligence)</li>
+          <li><strong>Collaborateur (anonymisé)</strong> : Keycloak (SSO/MFA), TheHive & Cortex (IR/SOAR)</li>
+        </ul>
+
+        <h3>Chantiers transverses (réalisés en commun)</h3>
+        <ul>
+          <li>Connexion des outils et chaîne de traitement (ex. Suricata → Wazuh, Wazuh → TheHive, etc.)</li>
+          <li>Sécurisation des services (HTTPS, MFA, accès via VPN)</li>
+          <li>Tests et validation bout en bout (connectivité, collecte, remontée d’alertes, création d’incidents)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ma contribution</h2>
+        <p>
+          J’ai participé à la conception globale de l’architecture SOC,
+          avec un focus particulier sur la sécurisation des accès et des flux, ainsi que la détection réseau.
+        </p>
+        <ul>
+          <li>Déploiement et configuration de <strong>Suricata</strong> (détection réseau) et intégration dans la chaîne SOC</li>
+          <li>Mise en place de <strong>WireGuard</strong> pour l’accès sécurisé au SOC (tunnel chiffré et segmentation)</li>
+          <li>Configuration de <strong>Traefik</strong> comme reverse proxy pour exposer les services de façon contrôlée</li>
+          <li>Réflexion sur l’exposition minimale, la segmentation et le contrôle des flux entre briques</li>
+          <li>Contribution aux tests (connectivité VPN, validation des flux, vérification des accès)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sécurisation des flux</h2>
+        <p>
+          Une analyse des flux a été menée afin de garantir confidentialité, intégrité et disponibilité.
+          Les communications sont sécurisées via chiffrement (TLS), authentification centralisée (SSO),
+          authentification multi-facteurs (MFA), filtrage et segmentation réseau.
+        </p>
+        <p>
+          Les échanges inter-outils (gestion d’alertes, authentification, enrichissement, stockage de logs)
+          sont traités comme flux critiques : limitation des ports, contrôle strict des accès et chiffrement.
+        </p>
+
+        <div class="card">
+          <h3>Exemples de principes appliqués</h3>
+          <ul class="clean">
+            <li>Accès aux interfaces SOC via HTTPS (TLS) et contrôle d’accès (SSO/MFA)</li>
+            <li>Interconnexion des outils via API (clés API) et échanges chiffrés</li>
+            <li>Accès restreint aux services sensibles via VPN (WireGuard) et exposition minimale</li>
+            <li>Segmentation des flux et réduction de la surface d’attaque (défense en profondeur)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Mise en œuvre</h2>
+        <p>
+          Les différentes briques ont été déployées progressivement,
+          puis testées à l’aide de scénarios de génération d’événements
+          (trafic réseau, événements système).
+        </p>
+        <p>
+          La chaîne complète de traitement — détection, remontée,
+          analyse et création d’incident — a été validée,
+          avec un accès au SOC strictement limité via VPN et des points d’entrée contrôlés.
+        </p>
+      </section>
+
+      <div class="card">
+        <h3>Résultats</h3>
+        <ul class="clean">
+          <li>Architecture SOC fonctionnelle et démontrable</li>
+          <li>Détection réseau et hôte opérationnelle</li>
+          <li>Gestion centralisée des incidents et enrichissement automatisable</li>
+          <li>Accès SOC sécurisé et cloisonné (VPN / exposition contrôlée / contrôle d’accès)</li>
+        </ul>
+        <p class="muted" style="margin:0;">
+        </p>
+      </div>
+
+      <section>
+        <h2>Limites</h2>
+        <p>
+          Le projet reste académique : absence de volumétrie réelle,
+          supervision 24/7 non couverte et playbooks SOAR volontairement limités.
+          La haute disponibilité n’a pas été mise en œuvre.
+        </p>
+      </section>
+
+      <section>
+        <h2>Perspectives</h2>
+        <ul>
+          <li>Ajout de KPI SOC et tableaux de bord opérationnels</li>
+          <li>Industrialisation des playbooks de réponse et enrichissements automatiques</li>
+          <li>Renforcement des contrôles d’accès et durcissement (moindre privilège)</li>
+          <li>Redondance / scalabilité multi-sites et amélioration de la résilience (PRA/PCA)</li>
+          <li>Intégration dans une gouvernance SSI plus large (GRC)</li>
+        </ul>
+      </section>
+
+    </article>
+
+    <aside class="project-aside">
+      <nav id="toc" class="toc" aria-label="Sommaire">
+        <button class="toc-toggle" aria-expanded="false" aria-controls="toc-content">
+          Sommaire <span class="toc-icon">▾</span>
+        </button>
+        <div id="toc-content" class="toc-content"></div>
+      </nav>
+    </aside>
+
+  </div>
+
+  <script src="../assets/js/toc.js"></script>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Florian MAGLOIRE • Portfolio Cybersécurité</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script src="../assets/js/toc.js"></script>
+
+</body>
+</html>

@@ -1,10 +1,517 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" data-theme="dark">
+
 <head>
-    <title>Portfolio - Florian |Sylvz </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Florian MAGLOIRE | Cybersécurité</title>
+  <meta name="description"
+    content="Portfolio cybersécurité : SOC / Blue Team, gouvernance SSI (GRC), réseaux, cloud, projets et contact." />
+
+  <meta property="og:title" content="Florian MAGLOIRE – Portfolio Cybersécurité" />
+  <meta property="og:description" content="SOC / Blue Team + Gouvernance SSI (GRC) : projets, compétences, parcours." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="assets/css/design-tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
 </head>
+
 <body>
-    <h1>Bienvenue sur mon portfolio</h1>
-    <p>Consultant cybersécurité</p>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <a href="#top" data-i18n-title="back_to_top_title" aria-label="Retour en haut">Florian MAGLOIRE</a>
+      </div>
+
+      <nav class="header-actions" aria-label="Actions globales">
+        <!-- 🌐 Switch langue -->
+        <button class="btn btn-ghost btn-sm" type="button" data-lang-toggle data-i18n-title="lang_toggle_title"
+          aria-label="Changer la langue">
+          🌐 FR
+        </button>
+
+        <!-- 🌙 / ☀️ Thème -->
+        <button class="btn btn-ghost btn-sm" type="button" data-theme-toggle data-i18n-title="theme_toggle_title"
+          aria-label="Changer le thème">
+          🌙
+        </button>
+
+        <!-- Navigation principale -->
+        <a href="#about"><span data-i18n="nav_profile">Profil</span></a>
+        <a href="#skills"><span data-i18n="nav_skills">Compétences</span></a>
+        <a href="#projects"><span data-i18n="nav_projects">Projets</span></a>
+        <a href="#experience"><span data-i18n="nav_experience">Expériences</span></a>
+        <a href="#formation"><span data-i18n="nav_education">Formation</span></a>
+        <a href="#certifs"><span data-i18n="nav_certifications">Certifications</span></a>
+        <a href="#contact"><span data-i18n="nav_contact">Contact</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="top" class="container">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Présentation">
+      <div>
+        <p class="kicker" data-i18n="hero_kicker">
+          Recherche d’emploi • SOC / Blue Team • Gouvernance SSI (GRC)
+        </p>
+        <h1>Cybersécurité — Réponses à incidents, Vulnérabilités, Supervision &amp; Gouvernance</h1>
+        <p class="lead" data-i18n="hero_lead">
+          Bac+5 cybersécurité. Expérience en environnement institutionnel : traitement d’alertes SOC,
+          gestion des vulnérabilités, déclinaison de PSSI, sensibilisation SSI, gestion de certificats et
+          contributions à des projets de détection.
+        </p>
+
+        <!-- Quote -->
+        <blockquote class="quote">
+          <span data-i18n="quote_text">
+          « Comprendre une situation, c’est déjà la contrôler. »</span>
+          <cite>— Kisuke Urahara</cite>
+        </blockquote>
+
+        <div class="actions" style="margin-top:12px;">
+          <a class="btn" href="assets/docs/CV_Florian_MAGLOIRE.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+          <a class="btn btn-ghost" href="https://github.com/Flomgl" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/florian-magloire/" target="_blank"
+            rel="noopener">LinkedIn</a>
+        </div>
+
+        <div class="chips" aria-label="Mots-clés">
+          <span class="chip">SOC / Blue Team</span>
+          <span class="chip">Réponse à incident</span>
+          <span class="chip">Vulnérabilités</span>
+          <span class="chip">GRC / PSSI</span>
+        </div>
+      </div>
+
+      <aside class="card" aria-label="En bref">
+        <h2>En bref</h2>
+        <ul class="clean">
+          <li>📍 Île‑de‑France </li>
+          <li>🛡️ Blue Team : SOC, incidents, vulnérabilités</li>
+          <li>📌 GRC : PSSI, sensibilisation, documentation</li>
+        </ul>
+        <p class="muted" style="margin-top:12px;">
+          Email : <a href="mailto:florian.magloire@proton.me">florian.magloire@proton.me</a>
+        </p>
+      </aside>
+    </section>
+
+    <!-- PROFIL -->
+    <section id="about" class="section" aria-label="Profil">
+      <div class="section-head">
+        <div class="section-ico" aria-hidden="true">👤</div>
+        <div>
+          <h2>Profil</h2>
+          <p class="muted">Positionnement & livrables</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <article class="card ui-card">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">🎯</span>
+            <h3>Positionnement</h3>
+          </div>
+          <p class="muted">
+            Polyvalent SOC / Blue Team &amp; Gouvernance SSI (GRC) : je sais traiter des alertes,
+            structurer la réponse, améliorer la posture (vulnérabilités), et contribuer à la
+            mise en œuvre de mesures (PSSI, sensibilisation, procédures).
+          </p>
+        </article>
+
+        <article class="card ui-card">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">📦</span>
+            <h3>Ce que j’aime livrer</h3>
+          </div>
+          <ul class="clean">
+            <li>Détection &amp; supervision : log pipelines, dashboards, alerting</li>
+            <li>Process &amp; documentation : fiches réflexes, procédures, traçabilité</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="skills" class="section" aria-label="Compétences">
+      <div class="section-head">
+        <div class="section-ico" aria-hidden="true">🛠️</div>
+        <div>
+          <h2>Compétences</h2>
+          <p class="muted">Domaines + outils</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card ui-card">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">🛡️</span>
+            <h3>SOC / Blue Team</h3>
+          </div>
+          <ul class="clean">
+            <li>Traitement d’alertes, triage, analyse &amp; remédiation</li>
+            <li>SIEM / EDR : Wazuh / Elastic (pratique)</li>
+            <li>MITRE ATT&amp;CK (référentiel d’analyse)</li>
+          </ul>
+
+          <!-- Logos outils (remplace par des <img> quand tu as les fichiers) -->
+          <div class="tool-logos" aria-label="Outils">
+            <!-- <img src="assets/img/tools/wazuh.svg" alt="Wazuh"> -->
+            <!-- <img src="assets/img/tools/elastic.svg" alt="Elastic"> -->
+            <span class="tool-pill">Wazuh</span>
+            <span class="tool-pill">Elastic</span>
+            <span class="tool-pill">MITRE</span>
+          </div>
+        </article>
+
+        <article class="card ui-card">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">📜</span>
+            <h3>GRC / Gouvernance SSI</h3>
+          </div>
+          <ul class="clean">
+            <li>Déclinaison de PSSI en mesures applicables</li>
+            <li>Sensibilisation cybersécurité (contenus + animation)</li>
+            <li>Documentation : procédures, fiches réflexes, comptes-rendus</li>
+          </ul>
+
+          <div class="tool-logos" aria-label="Référentiels">
+            <span class="tool-pill">PSSI</span>
+            <span class="tool-pill">ISO</span>
+            <span class="tool-pill">EBIOS RM</span>
+          </div>
+        </article>
+
+        <article class="card ui-card">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">☁️</span>
+            <h3>Réseaux / Infra / Cloud</h3>
+          </div>
+          <ul class="clean">
+            <li>LAN/WAN, VLAN, VPN, segmentation, filtrage</li>
+            <li>Azure : VNET, NSG, VM, PaaS (App Service)</li>
+            <li>Docker, virtualisation (VMware/Proxmox/VirtualBox)</li>
+          </ul>
+
+          <div class="tool-logos" aria-label="Technos">
+            <span class="tool-pill">Azure</span>
+            <span class="tool-pill">Docker</span>
+            <span class="tool-pill">VMware</span>
+            <span class="tool-pill">Proxmox</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projects" class="section" aria-label="Projets">
+      <div class="section-head">
+        <div class="section-ico" aria-hidden="true">📁</div>
+        <div>
+          <h2>Projets </h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <a class="card link-card ui-card" href="projects/soc-manage-hybride.html">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">🧱</span>
+            <h3>Blueteam : SOC Managé Hybride — Open Source</h3>
+          </div>
+          <p class="muted">Architecture SOC hybride : collecte, détection, flux sécurisés, réponse (MVP).</p>
+          <div class="meta">
+            <span class="tag">SOC</span>
+            <span class="tag">Blue Team</span>
+          </div>
+          <span class="readmore">Lire →</span>
+        </a>
+
+        <a class="card link-card ui-card" href="projects/poc-canary.html">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">🐤</span>
+            <h3> BlueTeam : POC - Serin — Canaris (détection passive)</h3>
+          </div>
+          <p class="muted">Flamingo/Promtail/Samba → Loki/Grafana, automatisation Makefile.</p>
+          <div class="meta">
+            <span class="tag">Détection</span>
+            <span class="tag">Observabilité</span>
+          </div>
+          <span class="readmore">Lire →</span>
+        </a>
+
+        <a class="card link-card ui-card" href="projects/wifi4eu.html">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">📶</span>
+            <h3>WIFI4EU — Wi‑Fi public sécurisé</h3>
+          </div>
+          <p class="muted">WPA2‑Entreprise (FreeRADIUS) + configuration et pilotage UniFi(Ubiquiti).</p>
+          <div class="meta">
+            <span class="tag">Réseaux</span>
+            <span class="tag">Sécurité</span>
+          </div>
+          <span class="readmore">Lire →</span>
+        </a>
+
+        <a class="card link-card ui-card" href="projects/toolbox-pentest-python.html">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">🐍</span>
+            <h3> RedTeam : InfraStrike — Toolbox Pentest (Python)</h3>
+          </div>
+          <p class="muted">OSINT, Nmap, VirusTotal, Paramiko, reporting (projet d’étude).</p>
+          <div class="meta">
+            <span class="tag">Scripting</span>
+            <span class="tag">Audit</span>
+          </div>
+          <span class="readmore">Lire →</span>
+        </a>
+
+
+        <!-- ✅ DOCTOGOGLE DOIT ÊTRE ICI -->
+        <a class="card link-card ui-card" href="projects/workspace.html">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">☁️</span>
+            <h3>Cloud — Google Workspace / Apps Script</h3>
+          </div>
+          <p class="muted">
+            Plateforme <strong>cloud-native</strong> basée sur
+            <strong>Google Workspace</strong> et <strong>Apps Script</strong>.
+            Automatisation de workflows métier sans serveur dédié.
+          </p>
+          <div class="meta">
+            <span class="tag">Cloud</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Google Workspace</span>
+          </div>
+          <span class="readmore">Lire →</span>
+        </a>
+
+
+        <a class="card link-card ui-card" href="projects/cloud-aws-azure.html">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">☁️</span>
+            <h3>Cloud — Azure & AWS (IaaS / PaaS)</h3>
+          </div>
+
+          <p class="muted">
+            Découverte et prise en main des environnements
+            <strong>Microsoft Azure</strong> et <strong>AWS</strong>.
+            Mise en œuvre pratique et <strong>rédaction de documentation technique</strong>
+            destinée aux futures promotions.
+          </p>
+
+          <div class="meta">
+            <span class="tag">Cloud</span>
+            <span class="tag">Azure</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Documentation</span>
+          </div>
+
+          <span class="readmore">Lire →</span>
+        </a>
+      </div>
+
+
+
+      <div class="card ui-card" style="margin-top:12px;">
+        <p class="muted" style="margin:0;">
+          Format commun : <strong>Contexte → Objectifs → Approche → Mise en œuvre → Résultats → Limites →
+            Perspectives</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPÉRIENCE -->
+    <section id="experience" class="section" aria-label="Expérience professionnelle">
+      <div class="section-head">
+        <div class="section-ico" aria-hidden="true">🏢</div>
+        <div>
+          <h2>Expérience professionnelle</h2>
+          <p class="muted">Rôles & missions</p>
+        </div>
+      </div>
+
+      <article class="card ui-card">
+        <div class="card-head">
+          <span class="card-ico" aria-hidden="true">🏛️</span>
+          <h3>Centre National de la Fonction Publique Territoriale (CNFPT)</h3>
+        </div>
+        <p class="muted">Alternance — 3 ans • Environnement institutionnel</p>
+
+        <div style="margin-top:12px;">
+          <h4>Assistant RSSI — Gouvernance &amp; Sécurité (2023 – 2025)</h4>
+          <ul class="clean">
+            <li>Traitement et qualification des alertes de sécurité issues d’un SOC managé</li>
+            <li>Gestion des vulnérabilités : analyse, priorisation, suivi et remédiation</li>
+            <li>Déclinaison de la PSSI en procédures opérationnelles</li>
+            <li>Rédaction de documentation SSI (procédures, fiches réflexes, supports internes)</li>
+            <li>Actions de sensibilisation à la cybersécurité auprès des agents</li>
+            <li>Participation à des projets de détection (canaris, supervision, alerting)</li>
+            <li>Sécurisation des flux de messagerie (Proofpoint)</li>
+
+          </ul>
+        </div>
+
+        <div style="margin-top:14px;">
+          <h4>Ingénieur sécurité — Support &amp; Sécurité (2022 – 2023)</h4>
+          <ul class="clean">
+            <li>Support sécurité et assistance aux équipes internes</li>
+            <li>Participation aux opérations courantes de sécurité du SI</li>
+            <li>Montée en compétences progressive sur les outils et processus SSI</li>
+            <li>Mise à jour de schémas d'architectures SSI</li>
+            <li>Documentation des configurations et procédures techniques</li>
+            <li> Contribution au déploiement EDR Trellix McAffee</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card ui-card" style="margin-top:12px;">
+        <div class="card-head">
+          <span class="card-ico" aria-hidden="true">🧰</span>
+          <h3>IPEOS I‑Solution</h3>
+        </div>
+        <p class="muted">Stage — ESN spécialisée en logiciels libres</p>
+        <div style="margin-top:12px;">
+          <h4>Technicien Réseaux &amp; Systèmes — Stage de fin d’études</h4>
+          <ul class="clean">
+            <li>Administration de parc informatique (Windows/Linux)</li>
+            <li>Support technique et assistance aux utilisateurs (GLPI)</li>
+            <li>Gestion de projets d’infrastructure (déploiement Wi‑Fi public)</li>
+            <ul class="clean">
+              <li>Support et assistance clients (GLPI)</li>
+              <li>Documentation des configurations et procédures techniques</li>
+              <li>Participation au projet WIFI4EU : installation/configuration bornes Wi‑Fi public</li>
+              <li>Authentification sécurisée FreeRADIUS (WPA2‑Entreprise)</li>
+            </ul>
+      </article>
+    </section>
+
+    <!-- FORMATION -->
+    <section id="formation" class="section" aria-label="Formation">
+      <div class="section-head">
+        <div class="section-ico" aria-hidden="true">🎓</div>
+        <div>
+          <h2>Formation</h2>
+          <p class="muted">Parcours académique</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card ui-card">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">🏅</span>
+            <h3>2025 - Mastère Cybersécurité (Bac+5) - Labellisé SecNumedu</h3>
+          </div>
+          <p class="muted">Pilotage stratégique et opérationnel de la cybersécurité des systèmes d’information : veille
+            et innovation,
+            analyse des besoins et des architectures,
+            définition de la stratégie sécurité et de la gouvernance,
+            gestion des risques et conformité réglementaire, cadrage et
+            pilotage de projets (coûts, délais, performance), management
+            d’équipes et relation client.
+
+            Renforcement de la résilience des infrastructures : audits et tests
+            d’intrusion, intégration de la sécurité dans le cycle de
+            développement, optimisation des processus opérationnels,
+            investigation numérique, gestion de crise cyber
+            (réponse à incident, communication, PRA)
+            et amélioration continue post-attaque.</p>
+        </article>
+
+        <article class="card ui-card">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">🧠</span>
+            <h3>2023 - Licence Pro — Administration &amp; Sécurisation des Réseaux</h3>
+          </div>
+          <p class="muted">Concevoir et développer des solutions web (Intranet/Internet, CMS, client/serveur),
+            modéliser les données, configurer et administrer des
+            environnements réseaux hétérogènes (Windows/Linux),
+            et assurer la disponibilité ainsi que la sécurité des systèmes,
+            applications et données.
+          </p>
+        </article>
+
+        <article class="card ui-card">
+          <div class="card-head">
+            <span class="card-ico" aria-hidden="true">🧩</span>
+            <h3>2021 - DUT Réseaux &amp; Télécommunications (Année spéciale)</h3>
+          </div>
+          <p class="muted">Compétences en conception, déploiement et
+            administration d’infrastructures réseaux et systèmes
+            (LAN/WAN, Windows/Linux), maîtrise des protocoles IP et des
+            technologies de télécommunication, sécurisation des environnements
+            informatiques, supervision et résolution d’incidents,
+            avec une approche méthodique et orientée qualité de service.
+          </p>
+        </article>
+      </div>
+
+      <p class="muted" style="margin-top:10px;">Justificatifs disponibles sur demande.</p>
+    </section>
+
+    <!-- CERTIFS -->
+    <section id="certifs" class="section" aria-label="Certifications">
+      <div class="section-head">
+        <div class="section-ico" aria-hidden="true">✅</div>
+        <div>
+          <h2>Certifications</h2>
+          <p class="muted">En cours</p>
+        </div>
+      </div>
+
+      <div class="card ui-card">
+        <p class="muted" style="margin:0;">Section “en cours”.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="section-head">
+        <div class="section-ico" aria-hidden="true">✉️</div>
+        <div>
+          <h2>Contact</h2>
+          <p class="muted">Échange / opportunités</p>
+        </div>
+      </div>
+
+      <div class="card ui-card">
+        <p style="margin-top:0;">
+          Pour une opportunité en <strong>SOC / Blue Team</strong>, <strong>GRC</strong>, ou cybersécurité au sens large
+          :
+        </p>
+        <div class="actions">
+          <a class="btn btn-sm" href="mailto:florian.magloire@proton.me">M’écrire</a>
+          <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/florian-magloire/" target="_blank"
+            rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost btn-sm" href="https://github.com/Flomgl" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost btn-sm" href="assets/docs/CV_Florian_MAGLOIRE.pdf" target="_blank" rel="noopener">CV
+            (PDF)</a>
+        </div>
+        <p class="muted" style="margin-bottom:0;">
+          Email : <a href="mailto:florian.magloire@proton.me">florian.magloire@proton.me</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Florian MAGLOIRE • Portfolio Cybersécurité • <span class="signature">Signed:
+          Sylvz</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Si tu as déjà un ui.js pour le thème, garde-le -->
+  <script src="assets/js/ui.js"></script>
 </body>
+
 </html>

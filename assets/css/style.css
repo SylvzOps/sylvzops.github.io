@@ -1,0 +1,341 @@
+/* =========================================================
+   STYLE — INDEX / PAGES GENERIQUES
+   (ne contient NI tokens, NI layout global, NI projets)
+   ========================================================= */
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding: 14px 0 8px;
+}
+
+/* =========================================================
+   HEADER / NAV — compléments visuels
+   ========================================================= */
+
+.dot,
+.sig-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 14px rgba(34,197,94,.45);
+}
+
+nav a {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  color: var(--text);
+  border-color: var(--border);
+  background: rgba(255,255,255,.03);
+}
+
+/* =========================================================
+   HERO / INDEX
+   ========================================================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 14px 0 8px;
+}
+
+.kicker {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 40px;
+  line-height: 1.08;
+  background: linear-gradient(
+    90deg,
+    var(--neon-blue),
+    var(--neon-green)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  margin: 0 0 16px;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chip {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   SECTIONS / GRILLES — INDEX
+   ========================================================= */
+
+.section {
+  padding: 14px 0;
+}
+
+.section h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.hero .card,
+.section .card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.03),
+    rgba(255,255,255,.015)
+  );
+}
+
+.card h2,
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.clean {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* =========================================================
+   CARTES LIENS — PROJETS (INDEX UNIQUEMENT)
+   ========================================================= */
+
+.link-card {
+  display: block;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34,197,94,.35);
+  box-shadow:
+    var(--shadow),
+    0 0 18px rgba(34,197,94,.25);
+}
+
+.tag {
+  display: inline-flex;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--neon-green);
+}
+
+/* =========================================================
+   SIGNATURE
+   ========================================================= */
+
+.signature {
+  color: var(--neon-blue);
+  font-weight: 900;
+}
+
+.sig-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(56,189,248,.25);
+  background: rgba(56,189,248,.06);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 18px;
+  padding: 26px 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE — INDEX
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .grid,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
+
+/* =========================================================
+   SECTIONS — lisibilité type CV
+   ========================================================= */
+
+/* Séparation visuelle douce entre sections */
+.section {
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--neon-blue),
+    var(--neon-green)
+  );
+  margin-bottom: 8px;
+  opacity: 0.5;
+}
+
+/* Un peu plus de respiration entre les grosses sections */
+.section + .section {
+  margin-top: 14px;
+}
+
+/* Titres de section plus affirmés */
+.section h2 {
+  font-weight: 900;
+  letter-spacing: .3px;
+}
+/* Sections structurantes (CV-like) */
+#about.section,
+#skills.section,
+#projects.section,
+#experience.section,
+#formation.section,
+#contact.section {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* ===============================
+   STRUCTURE CV — DENSE
+   =============================== */
+
+main.cv {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+
+/* Bloc = section serozr-like */
+.block {
+  margin-bottom: 18px;
+}
+
+/* Titres collés au contenu */
+.block h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.block h3 {
+  margin: 10px 0 4px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* Paragraphes compacts */
+.block p {
+  margin: 0 0 6px;
+}
+
+/* Listes ultra lisibles */
+.list {
+  margin: 0 0 6px;
+  padding-left: 18px;
+}
+
+/* Projets comme serozr */
+.projects a {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: var(--neon-green);
+}
+
+.projects a:hover {
+  text-decoration: underline;
+}
+
+/* Quote discrète */
+.quote {
+  margin: 8px 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.quote span {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 2px;
+}

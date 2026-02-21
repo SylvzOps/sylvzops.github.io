@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet – POC Canary (Détection) | Florian MAGLOIRE</title>
+  <meta name="description" content="POC Canary : mise en place d’un système de canaris pour la détection précoce d’intrusions." />
+
+ <!-- CSS global (important : on est dans /projects donc ../) -->
+<link rel="stylesheet" href="../assets/css/design-tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/project.css">
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <a href="../index.html" aria-label="Retour à l'accueil">Florian MAGLOIRE</a>
+    </div>
+    <nav>
+      <a class="btn btn-ghost btn-sm" href="../index.html#projects">← Retour aux projets</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container project">
+  <div class="project-layout">
+
+    <article class="project-content">
+      <h1>Serin — Détection passive par canaris (CNFPT)</h1>
+      <p class="intro">
+        Conception et POC d’un système de détection passive basé sur des “canaris” :
+        machines volontairement exposées dont toute interaction déclenche une alerte.
+        Objectif : alerte précoce, faible empreinte, déploiement duplicable en environnement institutionnel.
+      </p>
+
+      <section>
+        <h2>Contexte</h2>
+        <p>
+          Projet réalisé pendant l’alternance au CNFPT, dans un environnement vaste et soumis à des contraintes
+          opérationnelles (SOC externe, gouvernance SSI, réseaux cloisonnés).
+          Les missions associées (alertes SOC, vulnérabilités, PSSI, sensibilisation, certificats, ACME)
+          ont alimenté directement le besoin d’une détection précoce complémentaire.
+        </p>
+      </section>
+
+      <section>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Détecter les phases de reconnaissance (scan, accès SMB/SSH/HTTP…)</li>
+          <li>Centraliser les logs et rendre l’analyse exploitable</li>
+          <li>Automatiser le déploiement des sondes (répétabilité multi-sites)</li>
+          <li>S’adapter aux contraintes réseau (proxy, restrictions de sortie)</li>
+          <li>Segmenter la supervision (par direction si nécessaire)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Pourquoi des canaris (et pas un honeypot)</h2>
+        <p>
+          Le canari vise l’alerte immédiate à la première interaction suspecte.
+          Un honeypot, lui, cherche une interaction plus riche et une observation longue, avec une complexité
+          et des ressources supérieures — non alignées avec l’objectif du CNFPT pour ce projet.
+        </p>
+      </section>
+
+      <section>
+        <h2>Approche technique</h2>
+        <p>
+          Serin est modulaire : des agents canaris (Linux) simulent des services et génèrent des logs,
+          collectés et envoyés vers un serveur central de supervision.
+        </p>
+      </section>
+
+      <div class="card">
+        <h3>Technologies utilisées</h3>
+        <ul class="clean">
+          <li><strong>Flamingo</strong> : simulation multi-services et logs JSON (ex. SSH/HTTP/LDAP/DNS/FTP/SNMP)</li>
+          <li><strong>Samba</strong> : partage SMB leurre, logs d’accès</li>
+          <li><strong>Promtail</strong> : collecte des logs et envoi vers Loki</li>
+          <li><strong>Loki</strong> : agrégation, labellisation et stockage</li>
+          <li><strong>Grafana</strong> : dashboards + alerting</li>
+          <li><strong>Makefile</strong> : automatisation d’installation (composants + systemd)</li>
+        </ul>
+      </div>
+
+      <section>
+        <h2>Mise en œuvre</h2>
+        <p>
+          Déploiement agent via dépôt versionné : Makefile racine orchestrant les composants (Flamingo/Promtail/Samba),
+          services systemd, et mise à jour automatique planifiée (git pull).
+        </p>
+        <p>
+          Les logs Flamingo et Samba sont collectés localement puis envoyés à Loki, et visualisés via Grafana,
+          avec possibilité de dashboards cloisonnés.
+        </p>
+      </section>
+
+      <section>
+        <h2>Supervision des sondes (heartbeat)</h2>
+        <p>
+          Ajout d’un mécanisme de heartbeat : un événement périodique permet de vérifier qu’une sonde est active.
+          L’absence de heartbeat peut indiquer une sonde silencieuse (piste : alerting automatique sur cette absence).
+        </p>
+      </section>
+
+      <div class="card">
+        <h3>Résultats</h3>
+        <ul class="clean">
+          <li>POC fonctionnel : chaîne complète canari → logs → Loki → Grafana</li>
+          <li>Déploiement reproductible via Makefiles</li>
+          <li>Prise en compte de contraintes institutionnelles (proxy, gouvernance du code)</li>
+        </ul>
+        <p class="muted" style="margin:0;"><span class="signature">Signed: Sylvz</span></p>
+      </div>
+
+      <section>
+        <h2>Limites</h2>
+        <p>
+          Orchestration centralisée absente, hiérarchisation des alertes perfectible,
+          dépendance à la connectivité (proxy), supervision heartbeat à industrialiser (alerte automatique).
+        </p>
+      </section>
+
+      <section>
+        <h2>Perspectives</h2>
+        <ul>
+          <li>Pilotage centralisé des sondes</li>
+          <li>Durcissement des accès (bastion / reverse proxy)</li>
+          <li>Meilleure gestion des faux positifs</li>
+          <li>Industrialisation (forge interne type GitLab institutionnel)</li>
+        </ul>
+      </section>
+    </article>
+
+    <aside class="project-aside">
+      <nav id="toc" class="toc" aria-label="Sommaire">
+        <button class="toc-toggle" aria-expanded="false" aria-controls="toc-content">
+          Sommaire <span class="toc-icon">▾</span>
+        </button>
+        <div id="toc-content" class="toc-content"></div>
+      </nav>
+    </aside>
+
+  </div>
+  <script src="../assets/js/toc.js"></script>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Florian MAGLOIRE • Portfolio Cybersécurité</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+ <script src="../assets/js/toc.js"></script>
+
+</body>
+</html>
+``
